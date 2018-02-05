@@ -11,7 +11,7 @@ mongoose.Promise = global.Promise;
 
 const showSchema = mongoose.Schema({
   creator: {type: Objectid, require: true},
-  canEdit: Objectid,
+  editors: Objectid,
   showName: {type: String, required: true},
   showType: String,
   description: String,
@@ -53,7 +53,7 @@ showSchema.methods.serialize = function() {
 
 const venueSchema = mongoose.Schema({
   creator: Objectid,
-  canEdit: Objectid,
+  editors: Objectid,
   venueName: {type: String, required: true},
   location: {
     address: {type: String, required: true},
