@@ -10,7 +10,7 @@ mongoose.Promise = global.Promise;
 ==================================================*/
 
 const showSchema = mongoose.Schema({
-  creator: Objectid,
+  creator: {type: Objectid, require: true},
   canEdit: Objectid,
   showName: {type: String, required: true},
   showType: String,
@@ -19,7 +19,7 @@ const showSchema = mongoose.Schema({
   time: {type: String, required: true},
   venue: {type: Objectid, required: true},
   performers: [{type: Objectid, required: true}],
-  website: {type: String, required: true},
+  website: String,
   photo: String,
   priceRange: {
     lowPrice: Number,
